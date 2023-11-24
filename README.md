@@ -13,7 +13,7 @@ This is the unofficial Japanese translation of the [OWASP Top 10 Insider Threats
 - [**INT01:2023 – 古いソフトウェア (Outdated Software)**](Document/docs/2023/INT01_2023-Outdated_Software.md)
 - [**INT02:2023 – 不十分な脅威検出 (Insufficient Threat Detection)**](Document/docs/2023/INT02_2023-Insufficient_Threat_Detection.md)
 - [**INT03:2023 – 安全でない構成 (Insecure Configurations)**](Document/docs/2023/INT03_2023-Insecure_Configurations.md)
-- [**INT04:2023 – 安全でないリソースとユーザーの管理 (Insecure Resource and User Management)**](Document/docs/2023/INT04_2023-Insecure_Resource_and_User_Management)
+- [**INT04:2023 – 安全でないリソースとユーザーの管理 (Insecure Resource and User Management)**](Document/docs/2023/INT04_2023-Insecure_Resource_and_User_Management.md)
 - [**INT05:2023 – 安全でない暗号技術の使用 (Insecure Use of Cryptography)**](Document/docs/2023/INT05_2023-Insecure_Use_of_Cryptography.md)
 - [**INT06:2023 – 安全でないネットワークアクセス管理 (Insecure Network Access Management)**](Document/docs/2023/INT06_2023-Insecure_Network_Access_Management.md)
 - [**INT07:2023 – 安全でないパスワードとデフォルト認証情報 (Insecure Passwords and Default Credentials)**](Document/docs/2023/INT07_2023-Insecure_Passwords_and_Default_Credentials.md)
