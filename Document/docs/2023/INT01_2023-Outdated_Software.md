@@ -7,36 +7,36 @@ tags: owasp top-10 insider-threats insider threats int01 outdated software
 # INT01:2023 – 古いソフトウェア (Outdated Software)
 
 ## 説明
-It is important to keep software updated.
-Often, updates include security-relevant patches, meaning if a software isn't up-to-date, it may contain vulnerabilities in its current version state.
-These vulnerabilities are often publicly known and can be found easily by security scanners.
-Unfortunately, many companies and end users fail to keep all their software components up-to-date.
-Due to the lack of updates and update management, many software components and underlying systems become vulnerable over time, with increasing criticality as time passes by.
+ソフトウェアを常に最新の状態に保つことが重要です。
+多くの場合、アップデートにはセキュリティ関連のパッチが含まれています。つまり、ソフトウェアが最新でない場合、その現在のバージョンの状態に脆弱性を含んでいる可能性があります。
+これらの脆弱性は公に知られていることが多く、セキュリティスキャナで簡単に見つけられます。
+残念ながら、多くの企業やエンドユーザーはすべてのソフトウェアコンポーネントを最新の状態に保つことができません。
+アップデートとアップデート管理の欠如により、多くのソフトウェアコンポーネントと基盤となるシステムは時間の経過とともに脆弱になり、時間の経過とともに深刻度が増してきます。
 
 ## リスク
-Outdated software can lead to a variety of different vulnerabilities, ranging from vulnerabilities with a low criticality to vulnerabilities causing compromization of the entire system.
-The severity and amount of these vulnerabilities in an outdated software system depends on the individual case.
-Usually, they rise with time as more and more vulnerabilities are found.
+古いソフトウェアは深刻度が低い脆弱性からシステム全体の侵害を引き起こす脆弱性まで、さまざまな脆弱性を引き起こす可能性があります。
+古いソフトウェアシステムにおけるこれらの脆弱性の重大度と量は個々のケースによって異なります。
+通常、発見される脆弱性が増えるにつれて時間とともに増加します。
 
 ## 対策
-It is recommended to keep all software components, including libraries and similar, on an up-to-date, stable and supported version.
-Every software and its components should be regularly checked for updates and new patches.
-It is recommended to implement an update management process to ensure no components are missed, and the checks are in time.
-It makes sense to regularly check vendor sites and information security hubs for news about zero-day exploits for related software.
-In this case, there might be no updates to these kinds of vulnerabilities, but the company or individual can take precautions to reduce the impact or the probability of these vulnerabilities.
+ライブラリなどを含むすべてのソフトウェアコンポネントを最新の安定したサポートされているバージョンに保つことをお勧めします。
+すべてのソフトウェアとそのコンポーネントはアップデートや新しいパッチを定期的にチェックする必要があります。
+アップデートプロセスを実装して、コンポーネントの見落としがなく、チェックが間に合うように確保することを推奨します。
+関連ソフトウェアのゼロデイエクスプロイトに関するニュースについてベンダーサイトや情報セキュリティハブを定期的にチェックすることは理にかなっています。
+この場合、この種の脆弱性に対するアップデートは存在しないかもしれませんが、企業や個人はこのような脆弱性の影響や可能性を軽減するための予防措置を講じることができます。
 
 ## 攻撃シナリオの例
-**シナリオ #1: Outdated Web Server**
-A company hosts an internal website to provide information to its employees.
-The company doesn't have an update management process and doesn't regularly check and update its software components.
-The web server used for this website runs on an outdated version with known vulnerabilities. One of these vulnerabilities is a Remote Code Execution - RCE.
-An attacker who gained access to an employee's computer enumerates the version of the internal web server and quickly finds a related Common Vulnerabilities and Exposures - CVE for the current web server version regarding a 
-Remote Code Execution.
-The attacker manages to find a related exploit and gains access to the underlying server.
+**シナリオ #1: 古いウェブサーバー**
+ある企業は内部ウェブサイトをホストして、従業員に情報を提供しています。
+その企業にはアップデート管理プロセスがなく、ソフトウェアコンポーネントを定期的にチャックしてアップデートしてはいません。
+このウェブサイトで使用されているウェブサーバーは既知の脆弱性のある古いバージョンで動作しています。これらの脆弱性の一つはリモートコード実行 (RCE) です。
+従業員のコンピュータへのアクセスを取得した攻撃者は内部ウェブサーバーのバージョンを列挙し、
+現在のウェブサーバーバージョンに対してリモートコード実行に関連する共通脆弱性識別子 (CVE) を迅速に見つけます。
+攻撃者は関連するエクスプロイトを見つけることに成功し、基盤となるサーバーへのアクセスを取得します。
 
-**シナリオ #2: Deprecated Old Server**
-A company has an update management process to keep all its software components up-to-date.
-The update management process failed to inventory an old internal server with confidential construction plans.
-An attacker who gained access to the internal company's network finds this server and enumerates its OS version.
-The attacker finds out the vendor no longer supports the used version and is prone to several vulnerabilities, including critical ones.
-The attacker uses a publicly available exploit to access the server and exfiltrates the confidential construction plans, selling them to company competitors afterward.
+**シナリオ #2: 非推奨の古いサーバー**
+ある企業にはアップデート管理プロセスがあり、ソフトウェアコンポーネントを最新の状態に保っています。
+アップデート管理プロセスでは機密の構築計画がある古い内部サーバーのインベントリを作成できませんでした。
+企業内部のネットワークへのアクセスを取得した攻撃者はこのサーバーを見つけて、その OS バージョンを列挙します。
+攻撃者は使用しているバージョンをベンダーがサポートしなくなっていることを探し出し、重大な脆弱性を含む複数の脆弱性があることを知ります。
+攻撃者は公開されているエクスプロイトを使用してサーバーにアクセスし、機密の構築計画を流出し、その後、その企業の競合他社に販売します。
