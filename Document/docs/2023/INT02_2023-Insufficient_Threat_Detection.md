@@ -7,45 +7,45 @@ tags: owasp top-10 insider-threats insider threats int02 insufficient threat det
 # INT02:2023 – 不十分な脅威検出 (Insufficient Threat Detection)
 
 ## 説明
-Threat Detection plays a vital role in cyber defense.
-In most Cyberattacks, especially internal ones, the first detection of threat actors is too late.
-Most Cyberattacks get detected once the threat actors perform malicious actions that impact and disturb internal processes or interfere with employee's work.
-For example, when ransomware starts to encrypt data on an employee's computer or an important server.
-Unfortunately, a detection of a cyberattack in this state is too late.
-Qualitative threat detection is needed to detect threat actors and malicious activities before they can cause severe damage.
-Ideally, threat actors should be detected in the initial access phase or, at the latest, in the command and conquer phase.
+脅威検出はサイバー防御において重要な役割を果たします。
+ほとんどのサイバー攻撃、特に内部攻撃では、脅威アクターの最初の検出は遅すぎます。
+ほとんどのサイバー攻撃は脅威アクターが内部プロセスに影響を与えて邪魔したり、従業員の業務を妨害するような悪意のあるアクションを実行すると検出されます。
+たとえば、ランサムウェアが従業員のコンピュータや重要なサーバー上のデータを暗号化し始めた場合です。
+残念ながら、この状態でのサイバー攻撃の検出は遅すぎます。
+脅威アクターや悪意のあるアクティビティが深刻な被害をもたらす前に検出するには、定性的な脅威検出が必要とされます。
+理想的には、脅威アクターを最初のアクセスフェーズか、遅くともコマンドおよびコンカーフェーズで検出すべきです。
 
 ## リスク
-If threat actors aren't detected early on in a cyberattack chances are high that the target is powerless and doesn't get the opportunity to take further defense actions.
-Threat actors are normally weeks and month in an internal network before they perform conspicuous actions.
-Insufficient threat detection is one of the main reasons sophisticated cyberattacks are successful that often.
-Without proper detection and monitoring mechanisms in place the target won't be able to see threat actors get access to their internal network and move laterally through it.
+脅威アクターがサイバー攻撃の早期に検出されなければ、ターゲットは無力となり、さらなる防御措置を講じる機会が得られない可能性が高くなります。
+脅威アクターは通常、目立った行動を起こすまでに数週間あるいは数か月は内部ネットワークに潜伏します。
+不十分な脅威検出は巧妙なサイバー攻撃が頻繁に成功する主な理由の一つです。
+適切な検出や監視メカニズムがなければ、ターゲットは脅威アクターが内部ネットワークへのアクセスを得たり、ラテラルムーブメントすることを確認できません。
 
 ## 対策
-Implementing processes and mechanisms on different levels and points of the internal infrastructure is recommended to build a qualitative and powerful threat detection system.
-Security Incident and Event Management - SIEM Systems, Firewalls, Endpoint Detection and Response - EDR Applications and other mechanisms and software that supervise activities, build 
-the foundation of a threat detection system.
-It is crucial to implement these sensors and systems on as many levels and points of the infrastructure as possible, like computers, servers, or the network on 
-different ISO/OSI-Layers.
-This way, the chances of early detection of cyberattacks and their threat actor are high. The target can take further actions and can defend the internal infrastructure before 
-devastating attacks can be performed.
+定性的で強力な脅威検出システムを構築するには、内部インフラストラクチャのさまざまなレベルとポイントにプロセスとメカニズムを実装することを推奨します。
+セキュリティインシデントおよびイベント管理 (SIEM) システム、ファイアウォール、エンドポイント検出および対応 (EDR) アプリケーション、アクティビティを監視するその他のメカニズムやソフトウェアは、
+脅威検出システムの基盤を構築します。
+これらのセンサーやシステムを、コンピュータ、サーバー、さまざまな ISO/OSI レイヤのネットワークなど、可能な限りインフラストラクチャの多くのレベルとポイントに実装することが、
+極めて重要です。
+こうすることで、サイバー攻撃や脅威アクターの早期検出の可能性が高くなります。
+ターゲットはさらなるアクションを起こすことができ、壊滅的な攻撃が実行される前に、内部インフラストラクチャを防御できます。
 
 ## 攻撃シナリオの例
-**シナリオ #1: Insufficient Network Detection**
-A company has an internal infrastructure, including endpoint systems, like employee computers, and servers for internal applications.
-The internal servers hold mandatory data for the company's business processes. An End Point Detection and Response Software on every employee's device is implemented.
-An employee accidentally downloads and executes malware without realizing it is malicious software.
-An Advanced Persistent Threat - APT, a sophisticated and highly professionalized cybercriminal group, wrote the malware and the EDR fails to detect the malware.
-The malware is able to compromise one of the internal servers from the compromised employee's computer. The malware moves laterally through the network and compromises all the 
-internal servers. These actions aren't detected because no qualitative threat detection system exists for the network.
-After compromization, the malware encrypts all data on the servers, the company loses access to its data and, therefore, can't keep its business processes running.
-This could have been prevented if the company had implemented a redundant and complete threat detection and monitoring system and not only an EDR system.
+**シナリオ #1: 不十分なネットワーク検出**
+ある企業には従業員のコンピュータなどのエンドポイントシステムや、社内アプリケーション用のサーバーなどの社内インフラストラクチャがあります。
+社内サーバーにはその企業のビジネスプロセスにとって必須のデータを保管しています。すべての従業員のデバイスにはエンドポイント検出および対応ソフトウェアが導入されています。
+ある従業員は悪意のあるソフトウェアであることに気づかず、誤ってマルウェアをダウンロードして実行してしまいます。
+巧妙で高度に専門化されたサイバー犯罪グループである Advanced Persistent Threat (APT) がそのマルウェアを作成しており、EDR はそのマルウェアを検出できませんでした。
+マルウェアは侵害した従業員のコンピュータから社内サーバーの一つを侵害できます。マルウェアはネットワーク内をラテラルムーブメントして、すべての社内サーバーを侵害します。
+このネットワークには定性的な検出システムが存在しないため、これらのアクションは検出されません。
+侵害後、マルウェアはサーバー上のすべてのデータを暗号化し、その企業はデータにアクセスできなくなり、そのためにビジネスプロセスを実行し続けることができなくなります。
+その企業は EDR システムだけでなく、冗長化された完全な脅威検出および監視システムを導入して入れば、このような事態はふさげたはずです。
 
-**シナリオ #2: Insufficient Anomaly Detection**
-A company hosts internal services for employees to share critical data and files. It also provides the employees with laptops and configured Virtual Private Network - VPN software so that they 
-can work from home.
-An employee's laptop gets stolen on a train ride by a cybercriminal who manages to get access to the laptop and the employee's account.
-The cybercriminal finds the internal shares and downloads the files from all shares. 
-The company fails to detect this data exfiltration because it doesn't have an anomaly detection. It would have noticed the large transfer of data or the access to shares the employee 
-typically doesn't access.
-The cybercriminal later sells the exfiltrated data and files to concurrent companies.
+**シナリオ #2: 不十分な異常検出**
+ある企業は従業員が重要なデータやファイルを共有するために社内サービスをホストします。
+また、従業員が自宅で仕事ができるようにラップトップを提供し、仮想プライベートネットワーク (VPN) ソフトウェアを構成しています。
+ある従業員のラップトップが電車に乗っている間にサイバー犯罪者によって盗まれ、そのラップトップとその従業員のアカウントにアクセスすることに成功しました。
+サイバー犯罪者は社内共有を見つけ、すべての共有からファイルをダウンロードします。
+異常検出がないため、その企業はこのデータ流出を検出できません。
+異常検出があれば、大量のデータ転送や、従業員が一般的にアクセスしない共有へのアクセスに気付いたでしょう。
+サイバー犯罪者はその後、流出したデータやファイルを競合企業に売却します。
