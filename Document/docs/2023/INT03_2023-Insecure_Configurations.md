@@ -7,21 +7,21 @@ tags: owasp top-10 insider-threats insider threats int03 insecure configurations
 # INT03:2023 – 安全でない構成 (Insecure Configurations)
 
 ## 説明
-Insecure configurations represent a critical vulnerability category. These vulnerabilities arise when hardware, software, or network components are not properly set up or configured, exposing them to potential cyber threats. Understanding and addressing insecure configurations is essential to fortify an organization's defenses against cyberattacks. Addressing these vulnerabilities requires a proactive approach involving regular auditing, robust configuration management, and adherence to security best practices throughout an organization. 
+安全でない構成は重要な脆弱性カテゴリを代表します。これらの脆弱性は、ハードウェア、ソフトウェア、ネットワークコンポーネントが適切に設定または構成されていない場合に発生し、潜在的にサイバー脅威にさらされます。サイバー攻撃に対する組織の防御を強化するには、安全でない構成を理解して対処することが不可欠です。これらの脆弱性に対処するには、定期的な監査、堅牢な構成管理、組織全体にわたるセキュリティベストプラクティスの遵守などのプロアクティブなアプローチが必要です。
 
 ## リスク
-The risk of insecure configurations in IT systems cannot be emphasized enough. Insecure configurations create openings for exploits, potential data breaches and lateral movement. These vulnerabilities often serve as low-hanging fruit for attackers, offering a relatively easy path into an organization's network. To mitigate this risk, organizations must prioritize proper configuration management, regular security audits, and the enforcement of security best practices to reduce their attack surface and bolster their cyber defenses.
+IT システムにおける安全でない構成のリスクはいくら強調しても足りません。安全でない構成はエクスプロイト、潜在的なデータ侵害、ラテラルムーブメントに通じる穴をあけます。このような脆弱性は攻撃者にとって簡単に達成できる成果として機能し、比較的簡単に組織のネットワークへの侵入経路を提供することがよくあります。このリスクを軽減するには、組織は適切な構成管理、定期的なセキュリティ監査、セキュリティベストプラクティスの実施を優先し、攻撃対象領域を減らしてサイバー防御を強化する必要があります。
 
 ## 対策
-Regular security audits and proper configuration management are key factors for addressing this vulnerability category. Countermeasures could be, but are not limited to:
+定期的なセキュリティ監査と適切な構成管理はこの脆弱性カテゴリに対処するための重要な要素です。対策としては以下のようなものが考えられますが、これらに限定されません。
 
-1. Regular Auditing and Scanning: Conduct regular security audits and vulnerability assessments to identify insecure configurations. Automated scanning tools can help detect and remediate these issues proactively.
-2. Vendor Security Advisory: Most vendors give security-related advise to configure the software (more) secure or providing hardening guides. 
-3. Education and Training: Provide cybersecurity training and awareness programs for employees to reduce the likelihood of insecure configurations. Insecure configurations are primarily a result of not implementing best-practice strategies.
+1. 定期的な監査とスキャン: 定期的なセキュリティ監査と脆弱性評価を実施して、安全でない構成を特定します。自動スキャンツールはこのような問題をプロアクティブに検出して是正するのに役立ちます。
+2. ベンダーセキュリティアドバイザリ: ほとんどのベンダーはソフトウェアを (より) 安全に構成するためのセキュリティ関連のアドバイスや堅牢化ガイドを提供しています。
+3. 教育とトレーニング: 従業員に対してサイバーセキュリティトレーニングや意識向上プログラムを提供し、安全でない構成となる可能性を減らします。安全でない構成は主にベストプラクティス戦略を導入していないことが原因で起こります。
 
 ## 攻撃シナリオの例
-**シナリオ #1: Missing Security Headers**
-A company uses an internal web application hosting sensitive client data. However, the web application lacks essential security headers such as Content Security Policy (CSP) and X-Content-Type-Options. An insider, a disgruntled employee with basic technical knowledge, discovers this oversight. They craft a Cross-Site Scripting (XSS) attack, exploiting the missing headers to inject malicious scripts into the web application. Once executed, the script exfiltrates sensitive client data to an external server controlled by the insider. The absence of security headers made the application more susceptible to such client-side attacks, enabling the insider to compromise client data.
+**シナリオ #1: セキュリティヘッダの欠落**
+ある企業では機密性の高い顧客データをホストする社内ウェブアプリケーションを使用しています。しかし、そのウェブアプリケーションには Content Security Policy (CSP) や X-Content-Type-Options などの重要なセキュリティヘッダがありません。基本的な技術知識を持ち不満を抱いている従業員である内部関係者はこの過失を発見します。彼らは Cross-Site Scripting (XSS) 攻撃を仕掛けて、欠落しているヘッダを悪用し、悪意のあるスクリプトをそのウェブアプリケーション内に注入します。スクリプトが実行されると、機密性の高い顧客データを内部関係者によって制御されている外部サーバーに流出します。セキュリティヘッダがないため、そのアプリケーションはそのようなクライアントサイドの攻撃を受けやすくなり、内部関係者は顧客データを侵害できます。
 
-**シナリオ #2: No or Insufficient Network Separation**
-A healthcare provider relies on a single network for administrative operations and patient data management. There isn’t any network segmentation between these two operational areas. An insider, a system administrator upset over workplace issues, decides to exploit this lack of network separation. Using their elevated access privileges, they can easily traverse from the administrative segment of the network to the patient data management segment. They then maliciously alter patient records, causing significant data integrity issues and potentially endangering patient care.
+**シナリオ #2: 不在または不十分なネットワーク分離**
+ある医療機関では管理業務と患者データ管理を単一のネットワークに依存しています。これら二つの運用領域の間はネットワークセグメント化していません。職場の問題に憤慨したシステム管理者である内部関係者はこのネットワーク分離の欠落を悪用することにしました。昇格したアクセス権限を使用することで、ネットワークの管理セグメントから患者データ管理セグメントに簡単に侵入できます。そして、悪意を持って患者の記録を改竄して、データ完全性に重大な問題を引き起こし、患者の治療を危険にさらす可能性があります。
