@@ -7,59 +7,59 @@ tags: owasp top-10 insider-threats insider threats int04 insecure resource and u
 # INT04:2023 – 安全でないリソースとユーザーの管理 (Insecure Resource and User Management)
 
 ## 説明
-A big part and challenge of running an IT infrastructure is managing its resources and users.
-Even more challenging is secure infrastructure.
-It is mandatory to plan out the resources and access management, like who should have access to what and which user should have which permissions.
-Questions like: What type of data needs to be stored where and how, must be asked and answered.
-Most companies rely on centralized resource and user management tools like Active Directory or Microsoft Entra ID.
-The management of these complex tools itself is challenging. Many vulnerabilities arise when these tools are rolled out without a proper security concept.
-Besides that, permission and rights management are often neglected and users or technical users have more permissions than they actually need.
+IT インフラストラクチャの運用における大きな要素と課題はそのリソースとユーザーを管理することです。
+さらに難しいのは安全なインフラストラクチャです。
+誰が何にアクセスできるのか、どのユーザーがどの権限を持つべきかなど、リソースとアクセス管理を計画することが必須です。
+どのような種類のデータをどこに、どのように保存する必要があるかといった質問に回答する必要があります。
+ほとんどの企業は Active Directory や Microsoft Entra ID などの一元的なリソースおよびユーザー管理ツールに依存しています。
+このような複雑なツール自体の管理が困難です。これらのツールが適切なセキュリティコンセプトなしに導入されると、多くの脆弱性が発生します。
+そのほかにも、権限および権利管理はないがしろにされがちであり、ユーザーやテクニカルユーザーは実際に必要な権限よりも多くの権限を持っています。
 
 ## リスク
-Insecure Resource and User Management can lead to various security risks and vulnerabilities.
-For example, having more permissions than needed increases the risk of giving threat actors more access once a user account is compromised, leading to a greater chance of devastating cyberattacks.
-Additionally, rights and permissions might not be revoked, or user accounts aren't deleted after an employee left the company.
-The accounts' security is at risk if regulations like password policies aren't enforced.
-The same applies to resources like access to data or access to applications.
-Because these resources and users can quickly add up, it is difficult to maintain a good overview, and risks arise over time.
+安全でないリソースとユーザーの管理はさまざまなセキュリティリスクと脆弱性につながる可能性があります。
+たとえば、必要以上に権限を持つと、ユーザーアカウントが侵害されたときに脅威アクターにさらなるアクセスを与えるリスクを高め、壊滅的なサイバー攻撃の可能性が高まります。
+さらに、従業員が退職した後でも、権利と権限が取り消されなかったり、ユーザーアカウントが削除されないことがあります。
+パスワードポリシーなどの規制が施行されないと、アカウントのセキュリティはリスクにさらされます。
+同じことがデータへのアクセスやアプリケーションへのアクセスなどのリソースにも当てはまります。
+このようなリソースやユーザーは急速に増加してしまうため、適切な概観を維持することが困難であり、時間の経過とともにリスクが生じます。
 
 ## 対策
-To securely manage resources and users, different things are needed.
-Foremost, it is recommended to develop a strategy, what resources are present and who needs access to them. The same applies to other kinds of permissions.
-The need-to-know principle should always be kept in mind. Following the principle, the strategy and concept should be applied to the infrastructure and its technology, e.g. Active Directory.
-Afterward, it needs to be ensured that restrictions apply, and the used tool is configured securely.
-Additional tools, principles and concepts like Privileged Access Management - PAM should be implemented to harden the Resource and User Management.
-Authorization Management - a small team that decides who gets which rights / permissions and for how long - should also be added.
-Updating resources and a user's inventory is important, e.g. a new server is added, or an old one is resigned.
+リソースとユーザーを安全に管理するには、さまざまなことが必要です。
+まず最初に、どのようなリソースが存在し、それらにアクセスする必要があるのは誰か、戦略を立てることをお勧めします。同じことが他の種類の権限にも当てはまります。
+Need To Know の原則を常に念頭に置く必要があります。この原則に従って、戦略とコンセプトをたとえば Active Directory などのインフラストラクチャとそのテクノロジに適用させます。
+その後、制限が適用され、使用するツールが安全に構成されていることを確保する必要があります。
+リソースとユーザーの管理を堅牢化するには、特権アクセス管理 (Privileged Access Management, PAM) などの追加のツール、原則、コンセプトを導入する必要があります。
+権限管理 (Authorization Management, 誰がどの権利や権限をいつまで取得するかを決定する小さなチーム) も追加する必要があります。
+リソースとユーザーのインベントリを更新することが重要です。新しいサーバーを追加したり、古いものを破棄します。
 
 ## 攻撃シナリオの例
-**シナリオ #1: Insecure Privilege Management**
-A company has a conventional infrastructure and different IT systems for managing their fabrication facilities.
-It uses active directory for its resource and user management related to the IT infrastructure.
-All employees have local administration rights allowing them to install additional software on their own devices.
-Every administrator of the IT team has domain-admin rights, which they use to administrate the employee's device, help with problems, and manage the infrastructure.
-One of the employees gets an email with a malicious attachment.
-The employee is tricked into opening the attachment via social engineering methods used by a threat actor.
-The employee's laptop is now infected without anyone knowing.
-Because the employee's local admin rights, the threat actor is able to run an exploitation tool like mimikatz, which is able to extract credentials from the local system.
-The system runs Windows, which stores user credentials for a specific time. One of the IT administrators logged on to the employee's laptop a few hours ago to help with a 
-printer problem.
-The credentials are still stored on the employee's local laptop, which the threat actor extracts using mimikatz and the local admin right.
-This way, the threat actor easily compromised credentials for a domain-admin account.
-Because domain admins are the highest privileged accounts in an active directory domain, the threat actor now has control over almost every component of the infrastructure and, therefore, compromised 
-the whole infrastructure by attacking a single system.
-The whole infrastructure and company got compromised by a threat actor due to the lack of secure resource and user management. There was no privileged user management 
-following the need-to-know principle.
+**シナリオ #1: 安全でない権限管理**
+ある企業には製造設備を管理するための従来のインフラストラクチャとさまざまな IT システムがあります。
+IT インフラストラクチャに関連するリソースとユーザーの管理には Active Directory を使用します。
+すべての従業員は各自のデバイスに追加のソフトウェアをインストールできるローカル管理権限を持っています。
+IT チームのすべての管理者はドメイン管理権限を持ち、これを使用して従業員のデバイスを管理し、問題を解決し、インフラストラクチャを管理します。
+従業員の一人が悪意のある添付ファイル付きの電子メールを受け取ります。
+脅威アクターが使用するソーシャルエンジニアリング手法により、その従業員は騙されて添付ファイルを開きます。
+従業員のラップトップは誰にも気づかれずに感染してしまいます。
+この従業員にはローカル管理者権限があるため、脅威アクターは mimikatz などの悪用ツールを実行して、ローカルシステムから認証情報を抽出できます。
+このシステムは Windows を実行し、ユーザーの認証情報を特定の期間保存します。
+プリンターの問題を解決するために、IT 管理者の一人は数時間前に従業員のラップトップにログオンしました。
+認証情報は依然として従業員のローカルラップトップに保存されており、脅威アクターは mimikatz とローカル管理権限を使用して抽出します。
+このようにして、脅威アクターはドメイン管理アカウントの認証情報を簡単に侵害しました。
+ドメイン管理者は Active Directory ドメイン内で最も高い特権を持つアカウントであるため、脅威アクターはインフラストラクチャのほとんどすべてのコンポーネントをコントロールできるようになり、
+そのため、一つのシステムを攻撃することでインフラストラクチャ全体を侵害できます。
+安全なリソースとユーザーの管理が欠如していたため、インフラストラクチャと企業全体が脅威アクターによって侵害されます。
+Need To Know の原則に従った特権ユーザー管理はありませんでした。
 
-**シナリオ #2: Deprecated and Insecure User Accounts**
-A company has an internal infrastructure with a central customer data management system.
-The company doesn't implement its password policy technically.
-One employee works remotely and goes into a café to work from there.
-They go to the toilet and leave their locked laptop on their table.
-A threat actor uses this opportunity and goes to the laptop.
-The threat actor tries a few standard passwords and manages to get access after a few tries.
-They find a link to the central system managing the company's customer data.
-They copy all the data to their phone using a cable they had in their backpack.
-Afterward, they find an administrative share in the company's network holding sensitive configuration data, which they also extract.
-Therefore, the threat actor was able to get access by abusing a weak password and also extracting not only data the employee typically accesses but additionally sensitive administrative data because no 
-qualitative resource management and password policy was in place.
+**シナリオ #2: 非推奨で安全でないユーザーアカウント**
+ある企業には一元管理された顧客データ管理システムを備えた社内インフラストラクチャがあります。
+その企業ではパスワードポリシーを技術的に実装していません。
+ある従業員はリモートで作業しており、カフェに行ってそこで作業をします。
+トイレに行く際、ロックしたラップトップをテーブルに置いたままにします。
+脅威アクターはこの機会を利用して、ラップトップにアクセスします。
+脅威アクターはいくつかの標準的なパスワードを試し、数回試した後にアクセスすることに成功します。
+企業の顧客データを管理する一元管理システムへのリンクを見つけます。
+バックパックに入れていたケーブルを使用して、すべてのデータをスマートフォンにコピーします。
+その後、企業のネットワークで機密性の高い設定データを保持する管理共有を見つけ、これも抽出します。
+したがって、定性的なリソース管理とパスワードポリシーがないため、
+脅威アクターは脆弱なパスワードを悪用して、従業員が一般的にアクセスするデータだけでなく、機密性の高い管理データも抽出できました。
