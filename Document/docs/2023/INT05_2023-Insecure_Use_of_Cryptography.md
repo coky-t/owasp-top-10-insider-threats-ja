@@ -7,41 +7,41 @@ tags: owasp top-10 insider-threats insider threats int05 insecure use of cryptog
 # INT05:2023 – 安全でない暗号技術の使用 (Insecure Use of Cryptography)
 
 ## 説明
-Encryption plays an important role in cyber defense.
-This is well-known for external applications and systems but is often overlooked regarding internal networks and infrastructures.
-Companies and users have to keep in mind that if they don't implement sufficient encryption and cryptographic methods on their systems and protocols used in the internal network, an adjacent threat actor may be able to read, modify or inject data into communications and systems. This lack of encryption can lead to data leakage and the compromising of privileged accounts.
-It is important to remember that a defense line only to the outside doesn't fully protect the internal systems. As soon as an attacker gains access to the internal network, e.g. via phishing, the outside defense line is mostly obsolete. That is why the security of internal infrastructures has to be as secure as an external system or even more.
+暗号化はサイバー防御において重要な役割を果たします。
+これは外部アプリケーションやシステムではよく知られていますが、内部ネットワークやインフラストラクチャについては見逃されがちです。
+内部ネットワークで使用するシステムやプロトコルに十分な暗号化や暗号手法を実装していないと、隣接する脅威アクターが通信やシステム内のデータを読み取り、改変、注入できる可能性があることを、企業やユーザーは気に留める必要があります。このような暗号化の欠如はデータ漏洩や特権アカウントの侵害につながる可能性があります。
+外部への防衛線だけでは内部システムを完全に保護できないことを留意することが重要です。攻撃者がフィッシングなどで内部ネットワークへのアクセスを獲得すると、外部の防衛線はほとんど意味をなしません。そのため、内部インフラストラクチャのセキュリティが外部システムと同等かそれ以上に安全である必要があります。
 
 
 ## リスク
-If insecure cryptographic methods or cryptographic configurations are used, the risk of information leakage and compromising (privileged) accounts is high.
-This significantly raises the chances of a devastating cyberattack and its impact. For example, if an administrator connects to an internal server with a common remote access protocol like Remote Desktop Protocol - RDP and no encryption or an insecure one is configured, an adjacent and local threat actor can read these credentials from the network and easily compromise a privileged account.
-The same applies to sensitive information send over the internal network. A company's internal infrastructure typically has many protocols, tools and systems to transfer data or access various components. Each must be configured to use sufficient and secure encryption / cryptographic methods to protect the data and accounts.
+安全でない暗号手法や暗号設定が使用されている場合、情報漏洩や (特権) アカウントの侵害のリスクが高くなります。
+これにより、壊滅的なサイバー攻撃とその影響の可能性が大幅に高まります。たとえば、管理者が Remote Desktop Protocol - RDP などの一般的なリモートアクセスプロトコルで内部サーバーに接続する際、暗号化していないか、安全でないもので構成している場合、隣接するローカル脅威アクターがネットワークからこれらの認証情報を読み取り、特権アカウントを簡単に侵害できます。
+同じことが内部ネットワーク上で送信される機密情報にも当てはまります。企業の社内インフラストラクチャには一般的にデータを転送したりさまざまなコンポーネントにアクセスする多くのプロトコル、ツール、システムがあります。データやアカウントを保護するために、十分かつ安全な暗号化や暗号手法を使用して、各々を構成しなければなりません。
 
 
 ## 対策
-It is recommended to ensure all protocols, communications tools, remote access tools, data transfer tools and similar are configured to use secure cryptographic methods and configurations.
-Additionally, protocols not supporting secure encryption should be migrated to a secure alternative, such as TELNET -> SSH and FTP -> SFTP.
-Ensure the used cryptographic methods and configurations are sufficient, implement them after best practices and follow official recommendations.
-Cryptographic functionality should not be developed or implemented by oneself; instead, use publicly available and known libraries, "Don't roll your own crypto!".
+すべてのプロトコル、通信ツール、リモートアクセスツール、データ転送ツールなどが安全な暗号手法と構成を使用して構成されていることを確保することをお勧めします。
+さらに、安全な暗号化をサポートしていないプロトコルは、TELNET -> SSH や FTP -> SFTP など、安全な代替手段に移行すべきです。
+使用する暗号手法や構成が十分であることを確保し、ベストプラクティスに従って実装し、公式の推奨事項に従います。
+暗号機能は自分で開発したり実装すべきではありません。代わりに、一般に公開されている既存のライブラリを使用します。「独自の暗号を作ってはいけません。」
 
 
 ## 攻撃シナリオの例
-**シナリオ #1: Unencrypted Remote Access Tools**
-A company has a common internal it-infrastructure with different internal servers to provide applications to the employees. One of these applications is a Customer Relationship Management - CRM system which holds important and sensitive data about the customers of the company.
-A threat actor gains access to the internal infrastructure over an unknown internet-exposed system for the company, which resulted from a misconfiguration.
-The threat actor sniffs the internal network, listening to all internal network traffic from the machine they first compromised.
-An administrator connects to an internal file server to perform an update and uses telnet to connect to the server.
-Because telnet has no data encryption, the administrator's credentials are sent in clear text over the internal network.
-The threat actor is able to capture this network packet and, therefore, compromises the administrator's account.
-They use these credentials to log on to the CRM server and exfiltrate all the customer data they later sell to a concurrent company.
+**シナリオ #1: 暗号化されていないリモートアクセスツール**
+ある企業には従業員にアプリケーションを提供するためのさまざまな社内サーバーを備えた共通の社内 IT インフラストラクチャがあります。これらのアプリケーションの一つは企業の顧客について重要な機密データを保持する顧客関係管理 (CRM) です。
+脅威アクターは、設定ミスによってインターネットに公開された未知の企業のシステムを介して社内インフラストラクチャにアクセスします。
+脅威アクターは社内ネットワークを盗聴し、最初に侵入したマシンからすべての社内ネットワークトラフィックを傍受します。
+管理者は社内ファイルサーバーに接続して、アップデートを実行し、telnet を使用してサーバーに接続します。
+telnet はデータを暗号化しないため、管理者の認証情報は社内ネットワーク上でクリアテキストで送信されます。
+脅威アクターはこのネットワークパケットをキャプチャできるため、管理者のアカウントを侵害できます。
+これらの認証情報を使用して CRM サーバーにログオンし、すべての顧客データを抽出して競合他社に売却します。
 
-**シナリオ #2: Insufficient Use of Cryptography**
-A company has an internal IT infrastructure with several internal applications.
-One of these applications is used to create invoices for company customers.
-A threat actor gains access to the internal network and can inspect and inject packets into the internal network traffic.
-An employee connects to the invoice system to create multiple invoices.
-The communication protocol between the employee's laptop and the invoice server is encrypted but doesn't perform a cryptographic identity or integrity check.
-The threat actor uses this vulnerability to perform a Man in the Middle - MitM attack and injects and modifies data packets.
-The threat actor modifies the data the employee sends to the invoice server to redirect the money not to the company's account but to an account controlled by the threat actor.
-When the customer pays the invoice sent to them, they transfer the money to the attacker instead of the company.
+**シナリオ #2: 暗号技術の不十分な使用**
+ある企業にはいくつかの社内アプリケーションを備えた社内 IT インフラストラクチャがあります。
+これらのアプリケーションの一つは企業顧客向けの請求書を作成するために使用されます。
+脅威アクターは社内ネットワークへアクセスし、社内ネットワークトラフィックのパケットを検査して注入できます。
+従業員は請求書システムに接続して、複数の請求書を作成します。
+従業員のラップトップと請求書サーバーの間の通信プロトコルは暗号化されていますが、暗号化された ID や完全性チェックは行われません。
+脅威アクターはこの脆弱性を使用して、Man in the Middle - MitM 攻撃を実行し、データパケットを注入および改変します。
+脅威アクターは、従業員が請求書サーバーに送信するデータを変更して、お金を企業のアカウントではなく脅威アクターが管理するアカウントにリダイレクトします。
+送られた請求書を顧客が支払うと、その企業ではなく攻撃者に送金されます。
