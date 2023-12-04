@@ -7,46 +7,46 @@ tags: owasp top-10 insider-threats insider threats int06 insecure network access
 # INT06:2023 – 安全でないネットワークアクセス管理 (Insecure Network Access Management)
 
 ## 説明
-Network Access Management is a fundamental aspect of the architecture of internal infrastructures and the access control regulations.
-A qualitative Network Access Management prevents a variety of attacks and can reduce the impact of cyberattacks as well as the movement of threat actors inside the internal infrastructure.
-A more critical and severe risk is the lack of network separation, which would restrict access from one part of the internal infrastructure to others.
-Often, companies don't prevent threat actors from accessing the internal network if the attacker manages to get physical access to a network port or Wi-Fi nearby.
-Additionally, traffic should be supervised and regulated context-based closely to the application layers for communication paths that need to be allowed.
+ネットワークアクセス管理は内部インフラストラクチャのアーキテクチャとアクセス制御規制の基本的な側面です。
+定性的なネットワークアクセス管理によりさまざまな攻撃を防止し、サイバー攻撃の影響や社内インフラストラクチャ内での脅威アクターの移動を軽減できます。
+より重大で深刻なリスクは、社内インフラストラクチャのある部分から他の部分へのアクセスを制限する、ネットワーク分離の欠如です。
+多くの場合、攻撃者が近くのネットワークポートや Wi-Fi に物理的にアクセスできた場合でも、企業は攻撃者による社内ネットワークへのアクセスを阻止しません。
+さらに、許可する必要がある通信パスについてはアプリケーション層に近いところで、トラフィックをコンテキストベースで監視し規制する必要があります。
 
 ## リスク
-The absence of network separation will severely increase the risk of cyberattacks spreading through the internal infrastructure and, therefore, increase the risk of the compromization of the 
-whole infrastructure, even though only one component was compromised.
-If no network access control is in place, an attacker is able to get access to internal networks if the threat actor manages to gain physical access to network components, gets employees to 
-plug in malicious devices or gets access to a nearby Wi-Fi.
-Insufficient access regulations to components of the infrastructure or, to be more precise, network regulations closer to the application layers can allow threat actors to abuse commonly allowed 
-communication paths.
+ネットワークが分離されていないと、内部インフラストラクチャを通じて広がるサイバー攻撃のリスクが著しく増加し、
+そのため、たとえ一つのコンポーネントだけが侵害されたとしても、インフラストラクチャ全体が侵害されるリスクが高まります。
+ネットワークアクセス制御が導入されていない場合、脅威アクターがネットワークコンポーネントへの物理アクセスを取得したり、従業員に悪意のあるデバイスを接続させたり、近くの Wi-Fi にアクセスできると、
+攻撃者は内部ネットワークにアクセスできます。
+インフラストラクチャのコンポーネントへのアクセス規制、より正確にはアプリケーション層に近いところでのネットワーク規制が不十分であると、
+脅威アクターは一般的に許可されている通信パスを悪用できます。
 
 ## 対策
-It is recommended to implement Network Access Control - NAC mechanisms as part of the Network Access Management.
-These technical regulations, e.g. certificate-based NAC, will ensure that only approved devices can access the company's network.
-Ideally, network separation should be taken into account in the architecture phase of an infrastructure. Similar to the need-to-know principle, network chunks should be kept as small as possible as 
-well as the number of communication paths between these chunks.
-Technologies like Virtual Local Area Networks - VLANs can help to separate the infrastructure qualitatively.
-An access matrix can assist in planning out the network access management structure.
-The next recommended step is to supervise and regulate the communication paths between the "isolated" network chunks.
-These bridges or network transitions should be dynamically regulated. Based on the application layer context, access to these subnetworks or components should be allowed or disallowed.
-Remote access to the network, e.g. allowing employees to work from home, should be done securely using technologies like Virtual Private Networks - VPNs.
+ネットワークアクセス管理の一環としてネットワークアクセス制御 (NAC) メカニズムを導入することをお勧めします。
+これらの技術的規制、たとえば証明書ベースの NAC により、承認されたデバイスのみが企業のネットワークにアクセスできるようになります。
+理想的には、インフラストラクチャのアーキテクチャフェーズでネットワーク分離を考慮すべきです。
+Need To Know の原則と同様に、ネットワークチャンクとこれらのチャンク間の通信パスの数を可能な限り小さく保つ必要があります。
+仮想ローカルエリアネットワーク (VLAN) などのテクノロジはインフラストラクチャを定性的に分離するのに役立ちます。
+アクセスマトリクスはネットワークアクセス管理構造を計画するのに役立ちます。
+次に推奨される手順は、「分離された」ネットワークチャンク間の通信パスを監視し規制することです。
+これらのブリッジやネットワーク遷移は動的に規制すべきです。アプリケーション層コンテキストに基づいて、これらのサブネットワークやコンポーネントへのアクセスを許可したり禁止したりすべきです。
+ネットワークへのリモートアクセス、たとえば従業員の在宅勤務を許可するには、仮想プライベートネットワーク (VPN) などのテクノロジを使用して安全に行う必要があります。
 
 ## 攻撃シナリオの例
-**シナリオ #1: Insufficient Network Separation**
-A company has an internal network infrastructure hosting different applications for its customers.
-These applications can be accessed online so customers can use the services remotely.
-The company has multiple database servers holding the data for the named application servers as well as servers for internal applications and data.
-A threat actor finds a technical vulnerability in one of the publicly accessible application servers and gains complete control of the server.
-Because of the lack of network separation, the attacker is able to easily move laterally and compromises all the database servers as well as the internal application and data servers.
-The threat actor compromises the internal infrastructure, pivoting from only one initial access point.
-Later, the exfiltrated data is sold to other cybercriminals.
+**シナリオ #1: 不十分なネットワーク分離**
+ある企業には顧客向けにさまざまなアプリケーションをホストする社内ネットワークインフラストラクチャがあります。
+これらのアプリケーションはオンラインでアクセスできるため、顧客はリモートからサービスを使用できます。
+その企業には社内のアプリケーションやデータ用のサーバーだけでなく、指定のアプリケーションサーバーのデータを保持する複数のデータベースサーバーがあります。
+脅威アクターは公にアクセス可能なアプリケーションサーバーの一つに技術的な脆弱性を見つけ、サーバーを完全に制御します。
+ネットワークは分離されていないため、攻撃者は簡単にラテラルムーブメントでき、社内アプリケーションとデータサーバーだけでなく、すべてのデータベースサーバーを侵害します。
+脅威アクターは最初の一つのみのアクセスポイントを要として、社内インフラストラクチャを侵害します。
+その後、流出したデータは他のサイバー犯罪者に売却されます。
 
-**シナリオ #2: Deprecated Old Server**
-A company uses a common internal infrastructure with application servers and employee file shares.
-The company orders new network printers to replace their old ones.
-A threat actor is able to inject malicious hardware into the new network printer before it arrives at the company.
-When the new network printers are plugged into the internal network, the malicious hardware, consisting of a small computer, also uses the network port to get access to the internal network and 
-isn't blocked because no NAC is in place.
-It then connects to a remote host via the internet controlled by the threat actor, who establishes a connection back and creates a pivot point into the internal network from where additional attacks 
-can be performed.
+**シナリオ #2: 廃止された古いサーバー**
+ある企業ではアプリケーションサーバーと従業員のファイル共有を備えた共通の社内インフラストラクチャを使用しています。
+その企業は古いネットワークプリンタを置き換えるために新しいネットワークプリンタを注文します。
+脅威アクターはそれが企業に届く前に、悪意のあるハードウェアを新しいネットワークプリンタに挿入できます。
+そのネットワークプリンタが社内ネットワークに接続されると、小型コンピュータからなる悪意のあるハードウェアもネットワークポートを使用して社内ネットワークにアクセスしますが、
+NAC が設置されていないためブロックされません。
+そして、脅威アクターが制御するインターネット経由のリモートホストに接続し、再接続を確立して社内ネットワークへのピボットポイントを作成し、
+追加攻撃を実行できます。
