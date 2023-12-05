@@ -7,17 +7,17 @@ tags: owasp top-10 insider-threats insider threats int07 insecure passwords and 
 # INT07:2023 – 安全でないパスワードとデフォルト認証情報 (Insecure Passwords and Default Credentials)
 
 ## 説明
-Passwords are still a fundamental part of cybersecurity, and many Identity and Access Management (IAM) Systems rely on username and password authentication. Insecure passwords are a common vulnerability in cybersecurity, referring to passwords that are easy to guess or crack due to their simplicity, predictability, or lack of complexity (length). Default credentials preconfigured on hardware devices or software applications by manufacturers or vendors are often left unchanged by users or administrators, creating a security vulnerability.
+パスワードは依然としてサイバーセキュリティに不可欠な要素であり、多くの ID およびアクセス管理 (IAM) システムはユーザー名とパスワードの認証に依存しています。安全でないパスワードはサイバーセキュリティにおける一般的な脆弱性であり、その単純さ、予測しやすさ、すなわち複雑さ (長さ) の欠如のために推測やクラックが容易なパスワードを指します。製造業者やベンダーによってハードウェアデバイスやソフトウェアアプリケーションにあらかじめ設定されたデフォルト認証情報は、ユーザーや管理者によって変更されないままであることが多く、セキュリティ脆弱性を生み出しています。
 
 ## リスク
-Credentials are crucial to provide only authenticated and authorized users access to internal resources. Weak passwords can be easily exploited through various techniques, such as brute-force and dictionary attacks. Default credentials, however, can effortlessly be found in the documentation of the used product. Attackers can exploit devices or applications with unchanged default settings or stolen passwords. This can lead to unauthorized access, data breaches, and the compromise of critical systems.
+認証され認可されたユーザーのみが内部リソースにアクセスできるようにするために、認証情報は極めて重要です。脆弱なパスワードはブルートフォースや辞書攻撃などのさまざまな技法を通じて簡単に悪用される可能性があります。一方、デフォルト認証情報は使用する製品のドキュメントで簡単に見つけることができます。攻撃者は変更されていないデフォルト設定や盗んだパスワードでデバイスやアプリケーションを悪用する可能性があります。これは認可されていないアクセス、データ侵害、重要なシステムの侵害につながる可能性があります。
 
 ## 対策
-Organizations should enforce password complexity requirements to mitigate the risk, implement multi-factor authentication (MFA), and educate employees about the importance of strong, unique passwords. Password management tools can also help enhance security.
+組織はパスワード複雑性要件を適用してリスクを軽減し、多要素認証 (MFA) を導入し、強力でユニークなパスワードの重要性について従業員を教育すべきです。パスワード管理ツールもセキュリティ強化に役立ちます。
 
 ## 攻撃シナリオの例
-**シナリオ #1: Printer**
-Many networked printers are shipped with default usernames and passwords that are widely known. An attacker could exploit this by accessing the printer and viewing printing jobs containing sensitive information. To prevent this, organizations must change default printer credentials upon installation and restrict access to authorized personnel.
+**シナリオ #1: プリンタ**
+ネットワーク接続されたプリンタの多くは広く知られているデフォルトユーザー名とパスワードで出荷されます。攻撃者はこれを悪用してプリンタにアクセスして機密情報を含む印刷ジョブを閲覧できます。これを防ぐには、組織はインストール時にデフォルトプリンタ認証情報を変更して、アクセスを認可された社員に制限する必要があります。
 
-**シナリオ #2: User Accounts**
-Weak or easily guessable passwords for user accounts are a primary target for attackers. In an attack scenario, a malicious employee could gain unauthorized access to sensitive information or systems by exploiting weak user passwords. To counter this threat, organizations should enforce password policies, implement account lockouts after multiple failed login attempts, and promote password best practices among users.
+**シナリオ #2: ユーザーアカウント**
+ユーザーアカウントのパスワードが脆弱であったり簡単に推測可能であったりすると、攻撃者の主要な標的となります。攻撃シナリオでは、悪意のある従業員が脆弱なユーザーパスワードを悪用して、機密性の高い情報やシステムへの認可されていないアクセスを取得する可能性があります。この脅威に対抗するため、組織はパスワードポリシーを適用して、ログインに複数回失敗した場合にはアカウントロックアウトを導入し、パスワードのベストプラクティスをユーザーに推進します。
