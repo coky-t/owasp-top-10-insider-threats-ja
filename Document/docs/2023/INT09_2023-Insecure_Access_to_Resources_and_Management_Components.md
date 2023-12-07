@@ -7,25 +7,25 @@ tags: owasp top-10 insider-threats insider threats int09 insecure access to ress
 # INT09:2023 – リソースおよび管理コンポーネントへの安全でないアクセス (Insecure Access to Ressources and Management Components)
 
 ## 説明
-Lack of proper access controls and permissions allows unauthorized individuals or programs to access sensitive data, systems, or physical locations. This vulnerability manifests in misconfigured access policies, overly permissive settings, or improper authentication mechanisms.
+適切なアクセス制御とパーミッションがないと、認可されていない個人やプログラムが機密性の高いデータ、システム、物理的な場所にアクセスすることが可能になります。この脆弱性はアクセスポリシーの構成ミス、過度に許容的な設定、不適切な認証メカニズムとして現れます。
 
 ## リスク
-The risk is multifaceted and can have far-reaching consequences for a company's security and operational integrity:
+リスクは多面的であり、企業のセキュリティと業務の完全性に広範な影響を与える可能性があります。
 
-1. It exposes critical data, sensitive information, and proprietary resources to unauthorized access, resulting in data breaches, intellectual property theft, and confidential information compromise.
+1. 重要データ、機密情報、プロプライエタリリソースが認可されていないアクセスにさらされ、その結果、データ侵害、知的財産の盗難、機密情報の侵害が発生します。
 
-2. The potential for unauthorized manipulation of systems and configurations creates a scenario where malicious employees (or external attackers over compromised clients) can disrupt essential services, manipulate network traffic, or inject malicious code, leading to system outages and loss of business continuity.
+2. システムや設定を認可されずに操作される可能性があるため、悪意のある従業員 (や侵害されたクライアントを介した外部の攻撃者) が重要なサービスを妨害したり、ネットワークトラフィックを操作したり、悪意のあるコードを注入して、システムの停止や業務継続性の喪失につながるシナリオが生まれます。
 
-3. The compromise of management components can give attackers a foothold within an organization's infrastructure, enabling them to pivot and expand their access.
+3. 管理コンポーネントが侵害されると、攻撃者に組織のインフラストラクチャ内に足がかりを与え、攻撃者が軸足を移してアクセスを拡大できるようになります。
 
-Beyond the immediate security implications, these vulnerabilities can damage an organization's reputation, result in regulatory compliance violations, and incur financial losses due to the costs associated with incident response, remediation, and potential legal consequences. Therefore, addressing the risk of insecure access to resources and management components is paramount to ensuring the overall resilience and security of an organization's IT infrastructure.
+直接的なセキュリティの影響だけでなく、このような脆弱性は組織の評判を損ねたり、法令順守違反を引き起こしたり、インシデント対応、修復、潜在的な法的影響に関連するコストによって経済的損失を被る可能性があります。したがって、組織の IT インフラストラクチャの全体的な耐性とセキュリティを確保するには、リソースや管理コンポーネントへの安全でアクセスのリスクに対処することが最重要です。
 
 ## 対策
-Implement robust access control mechanisms across the entire infrastructure, adhering to the principle of least privilege, granting only the minimum necessary permissions to users and systems. Regularly review, audit, and update access rights, ensuring access is granted on a need-to-know basis. This principle says every employee should have permission to access all information that is __needed__ to fulfill the desired work, but not more than the necessary information to fulfill this task. Employ strong authentication and authorization protocols, including multi-factor authentication, to protect against unauthorized access. Security awareness training for employees is crucial to reduce the likelihood of unintentional access misconfigurations. Keep all management components, including hardware and software, updated with security patches and configurations to maintain a robust defense against exploitation.
+インフラストラクチャ全体に堅牢なアクセス制御メカニズムを導入し、最小権限の原則を遵守し、必要最小限の権限のみをユーザーとシステムに付与します。アクセス権を定期的にレビュー、監査、更新して、アクセスが Need To Know に基づいて付与されるようにします。この原則では、すべての従業員は目的の業務を遂行するために __必要とされる__ すべての情報にアクセスする権限を持たなければなりませんが、そのタスクを遂行するために必要な情報を超えてはいけません。多要素認証などの強力な認証と認可のプロトコルを採用して、認可されていないアクセスから保護します。従業員に対するセキュリティ意識向上トレーニングは意図しないアクセス設定ミスの可能性を減らすために極めて重要です。ハードウェアとソフトウェアを含むすべての管理コンポーネントをセキュリティパッチや設定で最新の状態に保ち、絵供養に対する堅牢な防御を維持します。
 
 ## 攻撃シナリオの例
-**シナリオ #1: File Share Access**
-An attacker may exploit insecure access controls on a file share, gaining unauthorized access to sensitive documents. A common reason that enables this attack is that the need-to-know principle does not manage access permission. To counter this threat, organizations should meticulously configure access rights for file shares, enforce strict permissions, and update server management components with strong access controls and authentication measures.
+**シナリオ #1: ファイル共有アクセス**
+攻撃者はファイル共有の安全でないアクセス制御を悪用して、機密性の高いドキュメントへの認可されていないアクセスを獲得する可能性があります。この攻撃を可能にするよくある理由は、Need To Know の原則でアクセス権限を管理していないことです。この脅威に対抗するには、組織はファイル共有のアクセス権を注意深く設定し、厳格なパーミッションを適用し、強力なアクセス制御と認証手段を備えたサーバー管理コンポーネントに更新する必要があります。
 
-**シナリオ #2: Network Device Management**
-Insecure access to network device management components, such as routers, switches, and firewalls, poses a significant threat. For instance, an internal attacker accessing a router management interface could modify routing tables, intercept network traffic, or even launch denial-of-service attacks. To address this risk, organizations should secure network device management interfaces with strong authentication and access controls, keep device firmware up to date, and employ network segmentation to isolate management traffic from the public network. Regular monitoring and logging of network device activities are essential to promptly detect and respond to any suspicious access or configuration changes.
+**シナリオ #2: ネットワークデバイス管理**
+ルーター、スイッチ、ファイアウォールなどのネットワークデバイス管理コンポーネントへの安全でないアクセスは重大な脅威をもたらします。たとえば、内部攻撃者がルーター管理インタフェースにアクセスすると、ルーティングテーブルを改変したり、ネットワークトラフィックを傍受したり、サービス拒否攻撃を仕掛けたりする可能性があります。このリスクに対処するには、組織は強力な認証とアクセス制御でネットワークデバイス管理インタフェースを保護し、デバイスファームウェアを最新の状態に保ち、ネットワークセグメンテーションを採用して管理トラフィックをパブリックネットワークから分離する必要があります。不審なアクセスや設定変更を迅速に検出して対応するには、ネットワークデバイスのアクティビティを定期的に監視してログ記録することが不可欠です。
