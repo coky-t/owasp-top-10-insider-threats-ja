@@ -7,23 +7,23 @@ tags: owasp top-10 insider-threats insider threats int10 insufficient asset mana
 # INT10:2023 – 不十分な資産管理と文書化 (Insufficient Asset Management and Documentation)
 
 ## 説明
-Insufficient asset management refers to the shortcomings in an organization's ability to accurately identify, track, and document all its hardware and software assets, as well as the associated configurations, dependencies, and lifecycles. It encompasses the lack of an organized and up-to-date inventory of IT assets, which is essential for effective security, compliance, and operational efficiency. It enables an easy and fast mapping of affected resources and an accurate incident response. 
+不十分な資産管理とはすべてのハードウェア資産とソフトウェア資産、関連する構成、依存関係、ライフサイクルを正確に識別、追跡、文書化する組織の能力に欠点があることを指します。これには効果的なセキュリティ、コンプライアンス、業務効率に不可欠な IT 資産の整理された最新のインベントリの欠如を包含しています。これにより影響を受けるリソースの簡単かつ迅速なマッピングと正確なインシデント対応が可能になります。
 ## リスク
-An accurate asset list and corresponding documentation are crucial for overall security. A lack of documentation increases the likelihood of unauthorized or unmanaged devices and software within the network, making it difficult to enforce security policies and monitor for vulnerabilities effectively. Secondly, it hampers incident response capabilities, as the organization may struggle to identify the scope and impact of a security incident or breach. Compliance with industry regulations and internal policies becomes challenging, exposing the organization to legal and financial liabilities. Finally, it leads to inefficient resource allocation, often resulting in overspending on redundant assets or underinvesting in critical IT infrastructure. Insufficient asset management and documentation significantly threaten an organization's security, compliance, cost-effectiveness, and operational resilience.
+正確な資産リストと対応する文書化はセキュリティ全体にとって極めて重要です。文書化が不十分だと、ネットワーク内に未認可や未管理のデバイスやソフトウェアが存在する可能性が高まり、セキュリティポリシーを適用して脆弱性を効果的に監視することが困難になります。次に、それによりインシデント対応能力が妨げられるため、組織はセキュリティインシデントや侵害の範囲と影響を特定するのに苦労する可能性があります。業界規制や社内ポリシーの遵守が困難になり、組織は法的および経済的な責任にさらされます。最後に、非効率なリソース割り当てにつながり、多くの場合、冗長な資産への過剰な支出や、重要な IT インフラストラクチャの投資不足につながります。不十分な資産管理と文書化は組織のセキュリティ、コンプライアンス、費用対効果、業務耐性を著しく脅かします。
 ## 対策
-To mitigate the risks, organizations should implement a comprehensive asset management program. This program should include the following key components:
+このリスクを軽減するに、組織は包括的な資産管理プログラムを導入すべきです。このプログラムには以下のような主要コンポーネントを含める必要があります。
 
-1. Asset Inventory: Develop and maintain a complete inventory of all hardware and software assets, including servers, workstations, mobile devices, applications, and network equipment. Continuously update this inventory to reflect changes in the environment.
-2. Asset Classification: Categorize assets based on their criticality and function. This classification helps prioritize security measures and resource allocation. 
-3. Lifecycle Management: Implement a systematic approach to asset lifecycle management, including procurement, deployment, maintenance, and disposal. Ensure that outdated or retired assets are securely decommissioned or renewed before they lead to a security risk.
-4. Regular Audits: Conduct regular audits and reconciliation of the asset inventory to identify discrepancies and ensure accuracy. This also includes regular vulnerability scanning cycles to detect affected assets and mitigate security risks.
-5. Process, Responsibility and Implementation Documentation: Provide an accurate list of documents describing all IT- and business processes, the corresponding responsibilities and technical details.
+1. 資産インベントリ: サーバー、ワークステーション、モバイルデバイス、アプリケーション、ネットワーク機器など、すべてのハードウェアおよびソフトウェア資産の完全なインベントリを作成して維持します。このインベントリを継続的に更新して、環境の変化を反映します。
+2. 資産の分類: 重要度と機能に基づいて資産を分類します。この分類はセキュリティ対策とリソース割り当ての優先順位付けに役立ちます。
+3. ライフサイクル管理: 調達、配備、保守、廃棄などの資産ライフサイクル管理に体系的なアプローチを導入します。老朽化した資産や廃止した資産がセキュリティリスクにつながる前に安全に廃棄または入れ換えるようにします。
+4. 定期的な監査: 資産インベントリの定期的な監査と照合を実施し、不一致を特定して正確性を確保します。これには定期的な脆弱性スキャンサイクルも含まれ、影響を受ける資産を検出してセキュリティリスクを軽減します。
+5. プロセス、責任、実装に関する文書: すべての IT プロセスとビジネスプロセス、対応する責任および技術的な詳細を記述した文書の正確なリストを提供します。
 
-By establishing a robust asset management program, organizations can enhance their security posture, improve compliance, optimize resource allocation, and streamline operations, ultimately reducing the overall risk.
+堅牢な資産管理プログラムを確立することで、組織はセキュリティ態勢を強化し、コンプライアンスを向上し、リソース割り当てを最適化し、業務を合理化して、最終的に全体的なリスクを軽減できます。
 
 ## 攻撃シナリオの例
-**シナリオ #1: Undetected Vulnerabilities**
-Over time, an organization has amassed a vast and complex IT infrastructure, including servers, network devices, and a multitude of software applications. Due to a lack of systematic vulnerability scanning and asset management, the IT team is unaware of the accumulating security weaknesses within their environment. This oversight exposes the company to potential cyber threats, as attackers can exploit these undetected vulnerabilities to gain unauthorized access, disrupt operations, or exfiltrate sensitive data. As the organization expands, the risk associated with these undetected vulnerabilities grows, underscoring the pressing need for a comprehensive vulnerability management program to proactively identify, prioritize, and remediate these weaknesses.
+**シナリオ #1: 未検出の脆弱性**
+時間をかけて、組織はサーバー、ネットワークデバイス、多数のソフトウェアアプリケーションなどの、膨大かつ複雑な IT インフラストラクチャを蓄積してきました。体系的な脆弱性スキャンや資産管理が欠如しているため、IT チームは環境内にセキュリティ脆弱性が蓄積されていることに気付いていません。この見落としにより、企業は潜在的なサイバー脅威にさらされ、攻撃者は未検出の脆弱性を悪用して認可されていないアクセスを取得したり、業務を妨害したり、機密データを流出する可能性があります。組織が拡大するにつれ、このような未検出の脆弱性に関連するリスクは増大し、これらの弱点を積極的に特定、優先順位付け、修復するための包括的な脆弱性管理プログラムの差し迫った必要性が浮き彫りになります。
 
-**シナリオ #2: Incident Response**
-An incident response team is confronted with a critical security breach. Attackers have successfully exploited an undisclosed software vulnerability in the corporate platform, causing a significant service disruption. The investigation reveals that the attacker compromised the platform's webservers, creating an entry point to the internal network. To prevent further damage to corporate value, the incident response team focuses on the critical assets that could easily identified by the asset management. Due to the accurate and up-to-date documentation, all critical systems weaknesses could identified and defended easily without significant data breaches and damaged systems rebuild.
+**シナリオ #2: インシデント対応**
+インシデント対応チームは重大なセキュリティ侵害に直面しています。攻撃者は企業プラットフォームで未公開のソフトウェア脆弱性の悪用に成功し、重大なサービス停止を引き起こしました。調査の結果、攻撃者はプラットフォームのウェブサーバーを侵害して、社内ネットワークへのエントリポイントを作成したことが明らかになりました。企業価値のさらなる損害を防ぐために、インシデント対応チームは資産管理によって容易に特定できる重要な資産に焦点を当てます。正確で最新の文書のおかげで、重要なシステムの脆弱性はすべて特定され、重大なデータ侵害や損傷したシステムの再構築を行うことなく、容易に防御できました。
