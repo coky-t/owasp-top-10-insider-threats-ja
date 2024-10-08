@@ -1,11 +1,11 @@
 # OWASP Top 10 Insider Threats ja
 
-This is the unofficial Japanese translation of the [OWASP Top 10 Insider Threats](https://github.com/OWASP/www-project-top-10-for-large-language-model-applications).
+This is the unofficial Japanese translation of the [OWASP Top 10 Insider Threats](https://github.com/OWASP/www-project-top-10-infrastructure-security-risks).
 
 ### Originator
 
-- Project Site - <https://owasp.org/www-project-top-10-insider-threats/>
-- Project Repository - <https://github.com/OWASP/www-project-top-10-insider-threats>
+- Project Site - <https://owasp.org/www-project-top-10-infrastructure-security-risks/>
+- Project Repository - <https://github.com/OWASP/www-project-top-10-infrastructure-security-risks>
 
 # OWASP Top 10 内部脅威 2023 日本語版
 
