@@ -7,7 +7,7 @@ This is the unofficial Japanese translation of the [OWASP Top 10 Insider Threats
 - Project Site - <https://owasp.org/www-project-top-10-infrastructure-security-risks/>
 - Project Repository - <https://github.com/OWASP/www-project-top-10-infrastructure-security-risks>
 
-# OWASP Top 10 内部脅威 2023 日本語版
+## OWASP Top 10 内部脅威 2023 日本語版
 
 - [OWASP Top 10 内部脅威](Document/index.md)
 - [**INT01:2023 – 古いソフトウェア (Outdated Software)**](Document/docs/2023/INT01_2023-Outdated_Software.md)
