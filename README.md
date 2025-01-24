@@ -9,7 +9,7 @@ This is the unofficial Japanese translation of the [OWASP Top 10 Insider Threats
 
 # OWASP Top 10 内部脅威 2023 日本語版
 
-* [OWASP Top 10 内部脅威](Document/index.md)
+- [OWASP Top 10 内部脅威](Document/index.md)
 - [**INT01:2023 – 古いソフトウェア (Outdated Software)**](Document/docs/2023/INT01_2023-Outdated_Software.md)
 - [**INT02:2023 – 不十分な脅威検出 (Insufficient Threat Detection)**](Document/docs/2023/INT02_2023-Insufficient_Threat_Detection.md)
 - [**INT03:2023 – 安全でない構成 (Insecure Configurations)**](Document/docs/2023/INT03_2023-Insecure_Configurations.md)
