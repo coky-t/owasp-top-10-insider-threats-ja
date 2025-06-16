@@ -2,6 +2,9 @@
 
 This is the unofficial Japanese translation of the [OWASP Top 10 Insider Threats](https://github.com/OWASP/www-project-top-10-infrastructure-security-risks).
 
+- Document Site - <https://coky-t.gitbook.io/owasp-top-10-insider-threats-ja/>
+- Document Repository - <https://github.com/coky-t/owasp-top-10-insider-threats-ja>
+
 ### Originator
 
 - Project Site - <https://owasp.org/www-project-top-10-infrastructure-security-risks/>
@@ -28,3 +31,6 @@ This is the unofficial Japanese translation of the [OWASP Top 10 Insider Threats
 ## Translator (Japanese)
 
 [Koki Takeyama](https://github.com/coky-t)
+
+- Document Site - <https://coky-t.gitbook.io/owasp-docs-ja/>
+- Document Repository - <https://github.com/coky-t/owasp-docs-ja>
